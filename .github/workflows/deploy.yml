@@ -43,7 +43,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }} # push=true only for main
-          tags: tonygilman/payment-gateway:latest
+          tags: rashidkemerov/payment-gateway:latest
           build-args: |
             SERVICE_NAME=payment-gateway
             SERVICE_PATH=./cmd/main.go
@@ -54,7 +54,7 @@ jobs:
             context: .
             file: Dockerfile
             push: true
-            tags: tonygilman/anti-fraud-analyzer:latest
+            tags: rashidkemerov/anti-fraud-analyzer:latest
             build-args: |
               SERVICE_NAME=anti-fraud-analyzer
               SERVICE_PATH=./cmd/anti-fraud-analyzer/main.go
@@ -65,7 +65,7 @@ jobs:
             context: .
             file: Dockerfile
             push: true
-            tags: tonygilman/alerter-service:latest
+            tags: rashidkemerov/alerter-service:latest
             build-args: |
               SERVICE_NAME=alerter-service
               SERVICE_PATH=./cmd/alerter-service/main.go
@@ -76,7 +76,7 @@ jobs:
             context: .
             file: Dockerfile
             push: true
-            tags: tonygilman/ch-query-tool:latest
+            tags: rashidkemerov/ch-query-tool:latest
             build-args: |
               SERVICE_NAME=ch-query-tool
               SERVICE_PATH=./cmd/ch-query-tool/main.go  
@@ -87,7 +87,7 @@ jobs:
             context: .
             file: Dockerfile
             push: true
-            tags: tonygilman/dlq-tool:latest
+            tags: rashidkemerov/dlq-tool:latest
             build-args: |
               SERVICE_NAME=dlq-tool
               SERVICE_PATH=./cmd/dlq-tool/main.go        
@@ -98,7 +98,7 @@ jobs:
             context: .
             file: Dockerfile
             push: true
-            tags: tonygilman/log-streamer:latest
+            tags: rashidkemerov/log-streamer:latest
             build-args: |
               SERVICE_NAME=log-streamer
               SERVICE_PATH=./cmd/log-streamer/main.go 
@@ -109,7 +109,7 @@ jobs:
             context: .
             file: Dockerfile
             push: true
-            tags: tonygilman/txn-generator:latest
+            tags: rashidkemerov/txn-generator:latest
             build-args: |
               SERVICE_NAME=txn-generator
               SERVICE_PATH=./cmd/txn-generator/main.go
@@ -120,7 +120,7 @@ jobs:
             context: .
             file: Dockerfile
             push: true
-            tags: tonygilman/service-doctor:latest
+            tags: rashidkemerov/service-doctor:latest
             build-args: |
               SERVICE_NAME=service-doctor
               SERVICE_PATH=./cmd/service-doctor/main.go 
@@ -131,7 +131,7 @@ jobs:
           context: .
           file: Dockerfile.migrator
           push: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-          tags: tonygilman/clickhouse-migrator:latest       
+          tags: rashidkemerov/clickhouse-migrator:latest       
 
   # --- JOB 2: Security Scan ---
   # This job runs in parallel with build-and-test to save time.
