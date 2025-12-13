@@ -59,7 +59,7 @@ services:
 
 # --- Microservices ---
   payment-gateway:
-    image: tonygilman/payment-gateway:latest
+    image: rashidkemerov/payment-gateway:latest
     # build:
     #   context: . # Dockerfile must be in the root
     #   dockerfile: Dockerfile
@@ -77,7 +77,7 @@ services:
     depends_on: { postgres: { condition: service_healthy }, kafka: { condition: service_started }, redis: { condition: service_started }, postgres-migrator: { condition: service_completed_successfully } }
 
   anti-fraud-analyzer:
-    image: tonygilman/anti-fraud-analyzer:latest
+    image: rashidkemerov/anti-fraud-analyzer:latest
     # build:
     #   context: .
     #   dockerfile: Dockerfile
@@ -90,7 +90,7 @@ services:
     depends_on: { clickhouse: { condition: service_healthy }, kafka: { condition: service_started }, clickhouse-migrator: { condition: service_completed_successfully }  }
 
   alerter-service:
-    image: tonygilman/alerter-service:latest
+    image: rashidkemerov/alerter-service:latest
     # build:
     #   context: .
     #   dockerfile: Dockerfile
@@ -135,7 +135,7 @@ services:
         condition: service_healthy
 
   clickhouse-migrator:
-    image: tonygilman/clickhouse-migrator:latest
+    image: rashidkemerov/clickhouse-migrator:latest
     depends_on:
       clickhouse:
         condition: service_healthy
